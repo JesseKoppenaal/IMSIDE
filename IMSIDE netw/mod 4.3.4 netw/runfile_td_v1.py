@@ -6,17 +6,32 @@
 # import functions
 # =============================================================================
 import settings_td_v1
+import numpy as np
+import os 
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 from core_td_v1 import mod42_netw
 #from inputfile_v1 import input_network
 #from functions_all_v1 import network_funcs
+
+run_name = 'test'
 
 delta = mod42_netw(settings_td_v1.constants, settings_td_v1.geo_pars, settings_td_v1.forc_pars, settings_td_v1.phys_pars)#, pars_seadom = (25000,100,10), pars_rivdom = (200000,2000,0))
 
 #calculate river discharge distribution
 delta.run_model()
  
-#
+
 delta.calc_output()
+
+
+#%%
+X2_oude_maas, X2_nieuwe_maas = delta.calc_X2_td()
+
+save_folder = '../../../Downscaling_Salt_Intrusion/predictions/X2_results/' + run_name
+os.makedirs(save_folder, exist_ok = True)
+
+np.save(save_folder + '/oude_maas_X2.npy', X2_oude_maas)
+np.save(save_folder + '/nieuwe_maas_X2.npy', X2_nieuwe_maas)
 
 
 #visualisation

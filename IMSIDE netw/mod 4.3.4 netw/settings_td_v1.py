@@ -14,7 +14,7 @@ from inpu.load_physics import phys_RMD1 , phys_test1
 # =============================================================================
 # load forcing conditions
 # =============================================================================
-from inpu.load_forcing_td import forc_RMD4, forc_RMD5,  forc_RMD_fromSOBEK, forc_RMD_fromcsv, forc_RMD_fromMo
+from inpu.load_forcing_td import forc_RMD4, forc_RMD5,  forc_RMD_fromSOBEK, forc_RMD_fromcsv, forc_RMD_fromMo, forc_RMDJ
 from inpu.load_forcing_td import forc_test1, forc_test2
 
 # =============================================================================
@@ -43,7 +43,7 @@ constants = phys_gen()
 #choose geometry
 geo_pars = geo_RMD9()
 #choose forcing.
-forc_pars = forc_RMD5()
+forc_pars = forc_RMDJ()
 #forc_pars = forc_RMD_fromSOBEK('01-07-2021' , '01-08-2021')
 #forc_pars = forc_RMD_fromcsv('/Users/biemo004/Documents/UU phd Saltisolutions/Databestanden/RM_data/MO_Q2122/','Q_daily_mean_Hag-Tie-Meg-Har-Gou_2021-2022_Bouke030524.csv',
 #                        '01-01-2022', '31-12-2022')

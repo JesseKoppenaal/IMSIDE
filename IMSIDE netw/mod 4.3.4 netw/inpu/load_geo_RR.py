@@ -194,19 +194,19 @@ def geo_RR2():
     # =============================================================================
     # Input: plotting - maybe build seperate dictionary for this
     # =============================================================================
-    path_RR = '/Users/biemo004/Documents/UU phd Saltisolutions/Databestanden/Geo Red River/'
-    list_channels = [f for f in os.listdir(path_RR) if f.endswith('.kml')]
-    RR_coords = {}
-    for i in range(len(list_channels)):
-        RR_coords[list_channels[i][:-4]] = np.array(kml_subtract_latlon(path_RR+list_channels[i]),dtype=float)
+    # path_RR = '/Users/biemo004/Documents/UU phd Saltisolutions/Databestanden/Geo Red River/'
+    # list_channels = [f for f in os.listdir(path_RR) if f.endswith('.kml')]
+    # RR_coords = {}
+    # for i in range(len(list_channels)):
+    #     RR_coords[list_channels[i][:-4]] = np.array(kml_subtract_latlon(path_RR+list_channels[i]),dtype=float)
         
-    cs = ['r','olive','b','black','c','orange','g','m','y']
-    count=0
-    for key in list(ch_gegs.keys()):
-        ch_gegs[key]['plot x'] = np.flip(RR_coords[key][:,0])
-        ch_gegs[key]['plot y'] = np.flip(RR_coords[key][:,1])
-        ch_gegs[key]['plot color'] = cs[count]
-        count+=1
+    # cs = ['r','olive','b','black','c','orange','g','m','y']
+    # count=0
+    # for key in list(ch_gegs.keys()):
+    #     ch_gegs[key]['plot x'] = np.flip(RR_coords[key][:,0])
+    #     ch_gegs[key]['plot y'] = np.flip(RR_coords[key][:,1])
+    #     ch_gegs[key]['plot color'] = cs[count]
+    #     count+=1
 
     '''
     # =============================================================================

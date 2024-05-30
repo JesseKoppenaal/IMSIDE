@@ -42,8 +42,8 @@ phys_pars = phys_test1()
 #choose physical constants
 constants = phys_gen()
 #choose geometry
-#geo_pars = geo_RMD9()
-geo_pars = geo_RMD9_hr(4)
+geo_pars = geo_RMD9()
+#geo_pars = geo_RMD9_hr(4)
 #choose forcing.
 forc_pars = forc_RMD4()
 #choose physical constants

@@ -227,7 +227,7 @@ def geo_RMD9():
     # Input: plotting - maybe build seperate dictionary for this
     # =============================================================================
 
-    path_RM = '/Users/biemo004/Documents/UU phd Saltisolutions/Databestanden/Geo_RijnMaas/'
+    path_RM = '../../../../Geo_RijnMaas/'
     list_channels = [f for f in os.listdir(path_RM) if f.endswith('.kml')]
     RM_coords = {}
     for i in range(len(list_channels)):
@@ -447,20 +447,20 @@ def geo_RMD9_hr(fac_hr = 1):
     # Input: plotting - maybe build seperate dictionary for this
     # =============================================================================
 
-    path_RM = '/Users/biemo004/Documents/UU phd Saltisolutions/Databestanden/Geo_RijnMaas/'
-    list_channels = [f for f in os.listdir(path_RM) if f.endswith('.kml')]
-    RM_coords = {}
-    for i in range(len(list_channels)):
-        RM_coords[list_channels[i][:-4]] = np.array(kml_subtract_latlon(path_RM+list_channels[i]),dtype=float)
+    # path_RM = '/Users/biemo004/Documents/UU phd Saltisolutions/Databestanden/Geo_RijnMaas/'
+    # list_channels = [f for f in os.listdir(path_RM) if f.endswith('.kml')]
+    # RM_coords = {}
+    # for i in range(len(list_channels)):
+    #     RM_coords[list_channels[i][:-4]] = np.array(kml_subtract_latlon(path_RM+list_channels[i]),dtype=float)
 
-    cs = ['r','olive','b','dimgray','c','orange','g','m','y','gold','indigo','tan','skyblue','maroon','peru',\
-          'beige','plum','silver','forestgreen','darkkhaki','rosybrown','teal','snow','aliceblue','mintcream']
-    count=0
-    for key in list(ch_gegs.keys()):
-        ch_gegs[key]['plot x'] = np.flip(RM_coords[key][:,0])
-        ch_gegs[key]['plot y'] = np.flip(RM_coords[key][:,1])
-        ch_gegs[key]['plot color'] = cs[count]
-        count+=1
+    # cs = ['r','olive','b','dimgray','c','orange','g','m','y','gold','indigo','tan','skyblue','maroon','peru',\
+    #       'beige','plum','silver','forestgreen','darkkhaki','rosybrown','teal','snow','aliceblue','mintcream']
+    # count=0
+    # for key in list(ch_gegs.keys()):
+    #     ch_gegs[key]['plot x'] = np.flip(RM_coords[key][:,0])
+    #     ch_gegs[key]['plot y'] = np.flip(RM_coords[key][:,1])
+    #     ch_gegs[key]['plot color'] = cs[count]
+    #     count+=1
 
     return ch_gegs
 
@@ -677,20 +677,20 @@ def geo_RMD10():
     # Input: plotting - maybe build seperate dictionary for this
     # =============================================================================
 
-    path_RM = '/Users/biemo004/Documents/UU phd Saltisolutions/Databestanden/Geo_RijnMaas/'
-    list_channels = [f for f in os.listdir(path_RM) if f.endswith('.kml')]
-    RM_coords = {}
-    for i in range(len(list_channels)):
-        RM_coords[list_channels[i][:-4]] = np.array(kml_subtract_latlon(path_RM+list_channels[i]),dtype=float)
+    # path_RM = '/Users/biemo004/Documents/UU phd Saltisolutions/Databestanden/Geo_RijnMaas/'
+    # list_channels = [f for f in os.listdir(path_RM) if f.endswith('.kml')]
+    # RM_coords = {}
+    # for i in range(len(list_channels)):
+    #     RM_coords[list_channels[i][:-4]] = np.array(kml_subtract_latlon(path_RM+list_channels[i]),dtype=float)
 
-    cs = ['r','olive','b','dimgray','c','orange','g','m','y','gold','indigo','tan','skyblue','maroon','peru',\
-          'beige','plum','silver','forestgreen','darkkhaki','rosybrown','teal','snow','aliceblue','mintcream']
-    count=0
-    for key in list(ch_gegs.keys()):
-        ch_gegs[key]['plot x'] = np.flip(RM_coords[key][:,0])
-        ch_gegs[key]['plot y'] = np.flip(RM_coords[key][:,1])
-        ch_gegs[key]['plot color'] = cs[count]
-        count+=1
+    # cs = ['r','olive','b','dimgray','c','orange','g','m','y','gold','indigo','tan','skyblue','maroon','peru',\
+    #       'beige','plum','silver','forestgreen','darkkhaki','rosybrown','teal','snow','aliceblue','mintcream']
+    # count=0
+    # for key in list(ch_gegs.keys()):
+    #     ch_gegs[key]['plot x'] = np.flip(RM_coords[key][:,0])
+    #     ch_gegs[key]['plot y'] = np.flip(RM_coords[key][:,1])
+    #     ch_gegs[key]['plot color'] = cs[count]
+    #     count+=1
 
     return ch_gegs
 

@@ -17,13 +17,14 @@ delta = mod42_netw(settings_ti_v1.constants, settings_ti_v1.geo_pars, settings_t
 #delta.run_check(np.loadtxt('/Users/biemo004/Documents/UU phd Saltisolutions/Output/temporary/out0102.txt' ))
 #delta.run_check()
 delta.run_model()
- 
+
 #calculate output
 delta.calc_output()
 
 #visualisation
 #delta.plot_s_gen()
 #delta.plot_proc_ch()
+
 
 #for Rhine-Meuse
 #delta.plot_salt_compRM('s_st','Subtidal salinity',0,35)

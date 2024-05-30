@@ -3,7 +3,39 @@
 # =============================================================================
 import numpy as np
 import pandas as pd
+import os 
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 dms = 10**9*3600*24
+
+def forc_RMDJ():
+    
+    os.chdir('../../../../Downscaling_Salt_Intrusion/predictions')
+    
+    xl_R = pd.read_excel('Rhine/SSP2-4.5/EC-Earth_SSP2-4.5.xlsx')
+    xl_M = pd.read_excel('Meuse/SSP2-4.5/EC-Earth_SSP2-4.5.xlsx')
+    
+    #time parameters
+    T = 3#365*5
+    DT = np.zeros(T) + 24*3600 # I usually work with subtidal time steps of one day 
+    
+    Q_R = xl_R['Q'][:T]
+    Q_M = xl_R['Q'][:T]
+    
+    
+    #forcing conditions
+    Qriv   = np.array([Q_R, Q_M]) #mind the sign! this is the discharge at r1,r2,...
+    Qweir  = np.array([0+ np.zeros(T),125+ np.zeros(T)])#,0,0]
+    Qhar   = np.array([0+ np.zeros(T)])
+    n_sea  = np.array([0+ np.zeros(T)]) #this is the water level at s1,s2,...
+    soc    = np.array([33+ np.zeros(T)])  #this is salinity at s1,s2, ...
+    sri    = np.array([0+ np.zeros(T),0+ np.zeros(T)]) #this is the salinity of the river water at r1,r2, ...
+    swe    = np.array([0+ np.zeros(T),0+ np.zeros(T)])
+    tid_per= 44700
+    a_tide = np.array([0.83]) #this is the amplitude of the tide at s1,s2, ...
+    p_tide = np.array([70*np.pi/180]) #this is the phase of the tide at s1,s2, ...
+
+    return Qriv,Qweir,Qhar, n_sea, soc, sri, swe, tid_per, a_tide, p_tide, T, DT
+
 
 
 def forc_RMD4():
@@ -16,7 +48,7 @@ def forc_RMD4():
     Qweir  = np.array([0+ np.zeros(T),125+ np.zeros(T)])#,0,0]
     Qhar   = np.array([0+ np.zeros(T)])
     n_sea  = np.array([0+ np.zeros(T)]) #this is the water level at s1,s2,...
-    soc    = np.array([30+ np.zeros(T)])  #this is salinity at s1,s2, ...
+    soc    = np.array([33+ np.zeros(T)])  #this is salinity at s1,s2, ...
     sri    = np.array([0+ np.zeros(T),0+ np.zeros(T)]) #this is the salinity of the river water at r1,r2, ...
     swe    = np.array([0+ np.zeros(T),0+ np.zeros(T)])
     tid_per= 44700

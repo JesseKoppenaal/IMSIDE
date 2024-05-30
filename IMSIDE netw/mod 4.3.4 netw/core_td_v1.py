@@ -295,6 +295,7 @@ class mod42_netw:
     from visualisation.visu_RM_td import plot_salt_pointRM , anim_RM_st
     from visualisation.visu_gen_td import plot_s_gen_td
 
+    from visualisation.calc_RM_td import calc_X2_td
     '''
     #calculation of salinity
     from saltmodule_ti_v1 import run_model
