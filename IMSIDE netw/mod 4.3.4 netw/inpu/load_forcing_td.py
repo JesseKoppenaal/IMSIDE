@@ -9,7 +9,8 @@ dms = 10**9*3600*24
 
 def forc_RMDJ():
     
-    os.chdir('../../../../Downscaling_Salt_Intrusion/predictions')
+    os.chdir('../../../../Downscaling_SI/predictions')
+    #os.chdir('../../../../Downscaling_Salt_Intrusion/predictions')
     
     xl_Tiel = pd.read_excel('Tiel/SSP2-4.5/CESM_SSP2-4.5.xlsx')
     xl_Megen = pd.read_excel('Megen/SSP2-4.5/CESM_SSP2-4.5.xlsx')
