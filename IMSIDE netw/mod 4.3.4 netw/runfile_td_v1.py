@@ -27,7 +27,7 @@ delta.calc_output()
 #%%
 X2_oude_maas, X2_nieuwe_maas = delta.calc_X2_td()
 
-save_folder = '../../../Downscaling_Salt_Intrusion/predictions/X2_results/' + run_name
+save_folder = '../../X2_results/' + run_name
 os.makedirs(save_folder, exist_ok = True)
 
 np.save(save_folder + '/oude_maas_X2.npy', X2_oude_maas)

@@ -11,20 +11,20 @@ def forc_RMDJ():
     
     os.chdir('../../../../Downscaling_Salt_Intrusion/predictions')
     
-    xl_R = pd.read_excel('Rhine/SSP2-4.5/EC-Earth_SSP2-4.5.xlsx')
-    xl_M = pd.read_excel('Meuse/SSP2-4.5/EC-Earth_SSP2-4.5.xlsx')
+    xl_Tiel = pd.read_excel('Tiel/SSP2-4.5/CESM_SSP2-4.5.xlsx')
+    xl_Megen = pd.read_excel('Megen/SSP2-4.5/CESM_SSP2-4.5.xlsx')
     
     #time parameters
     T = 3#365*5
     DT = np.zeros(T) + 24*3600 # I usually work with subtidal time steps of one day 
     
-    Q_R = xl_R['Q'][:T]
-    Q_M = xl_R['Q'][:T]
+    Q_Tiel = xl_Tiel['Q'][:T]
+    Q_Megen = xl_Megen['Q'][:T]
     
     
     #forcing conditions
-    Qriv   = np.array([Q_R, Q_M]) #mind the sign! this is the discharge at r1,r2,...
-    Qweir  = np.array([0+ np.zeros(T),125+ np.zeros(T)])#,0,0]
+    Qriv   = np.array([Q_Tiel, Q_Megen]) #mind the sign! this is the discharge at r1,r2,...
+    Qweir  = np.array([0+ np.zeros(T),0+ np.zeros(T)])#,0,0]
     Qhar   = np.array([0+ np.zeros(T)])
     n_sea  = np.array([0+ np.zeros(T)]) #this is the water level at s1,s2,...
     soc    = np.array([33+ np.zeros(T)])  #this is salinity at s1,s2, ...
