@@ -226,9 +226,13 @@ def geo_RMD9():
     # =============================================================================
     # Input: plotting - maybe build seperate dictionary for this
     # =============================================================================
-
-    path_RM = '../../../../Geo_RijnMaas/'
-    list_channels = [f for f in os.listdir(path_RM) if f.endswith('.kml')]
+    
+    try:
+        path_RM = '../../../../Geo_RijnMaas/'
+        list_channels = [f for f in os.listdir(path_RM) if f.endswith('.kml')]
+    except FileNotFoundError: #want lorenz <-> laptop issues
+        path_RM = '../../../../Geo_RijnMaas/'
+        list_channels = [f for f in os.listdir(path_RM) if f.endswith('.kml')]
     RM_coords = {}
     for i in range(len(list_channels)):
         RM_coords[list_channels[i][:-4]] = np.array(kml_subtract_latlon(path_RM+list_channels[i]),dtype=float)

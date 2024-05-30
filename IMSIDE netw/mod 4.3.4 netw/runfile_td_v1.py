@@ -5,9 +5,10 @@
 # =============================================================================
 # import functions
 # =============================================================================
+import os 
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 import settings_td_v1
 import numpy as np
-import os 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 from core_td_v1 import mod42_netw
 #from inputfile_v1 import input_network
@@ -25,8 +26,8 @@ delta.calc_output()
 
 
 #%%
-X2_oude_maas, X2_nieuwe_maas = delta.calc_X2_td()
 
+X2_oude_maas, X2_nieuwe_maas = delta.calc_X2_td()
 save_folder = '../../X2_results/' + run_name
 os.makedirs(save_folder, exist_ok = True)
 

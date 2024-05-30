@@ -25,18 +25,19 @@ def calc_X2_td(self):
                     #print('The salt intrusion in the Oude Maas is ' ,L2_OM[t]/1000, ' km')
                     break
       
-        if np.max(self.ch_outp['Nieuwe Maas 1 old']['sb_st'])<2: 
+        if np.max(self.ch_outp['Nieuwe Maas 1 old']['sb_st'][t])<2: 
             #print('No salt intrusion in the Nieuwe Maas')
             L2_NM[t] = 0 #np.nan
         else:  
             Ltot = 0
-            for key in ['Nieuwe Maas 1 old','Nieuwe Maas 2 old']:
+            #for key in ['Nieuwe Maas 1 old','Nieuwe Maas 2 old']:
+            for key in ['Nieuwe Maas 1 old','Nieuwe Maas 2 old','Noord','Nieuwe Merwede']:
                 if np.min(self.ch_outp[key]['sb_st'][t]) >2: 
                     Ltot += np.sum(self.ch_gegs[key]['L'])
                     continue
                 else: 
                     L2_NM[t] = Ltot-self.ch_outp[key]['px'][np.where(self.ch_outp[key]['sb_st'][t]>2)[0]][0]
-                    #print('The salt intrusion in the Nieuwe Maas is ' ,L2_NM[t]/1000, ' km')
                     break
 
     return L2_OM, L2_NM
+
