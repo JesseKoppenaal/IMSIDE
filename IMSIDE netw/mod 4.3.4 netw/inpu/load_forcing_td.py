@@ -19,8 +19,8 @@ def forc_RMDJ():
     T = 365*84
     DT = np.zeros(T) + 24*3600 # I usually work with subtidal time steps of one day 
     
-    Q_Tiel = xl_Tiel['ensemble_average'][:T]
-    Q_Megen = xl_Megen['ensemble_average'][:T]
+    Q_Tiel = xl_Tiel['ensemble_avg'][:T]
+    Q_Megen = xl_Megen['ensemble_avg'][:T]
     
     
     #forcing conditions
