@@ -12,11 +12,11 @@ def forc_RMDJ():
     os.chdir('../../../../Downscaling_SI/predictions')
     #os.chdir('../../../../Downscaling_Salt_Intrusion/predictions')
     
-    xl_Tiel = pd.read_excel('Tiel/SSP2-4.5/CESM_SSP2-4.5.xlsx')
-    xl_Megen = pd.read_excel('Megen/SSP2-4.5/CESM_SSP2-4.5.xlsx')
+    xl_Tiel = pd.read_excel('ensemble_average_SSP5-8.5.xlsx')
+    xl_Megen = pd.read_excel('ensemble_average_SSP5-8.5.xlsx')
     
     #time parameters
-    T = 365*5
+    T = 365*84
     DT = np.zeros(T) + 24*3600 # I usually work with subtidal time steps of one day 
     
     Q_Tiel = xl_Tiel['Q'][:T]
