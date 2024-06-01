@@ -14,7 +14,7 @@ from core_td_v1 import mod42_netw
 #from inputfile_v1 import input_network
 #from functions_all_v1 import network_funcs
 
-run_name = 'CESM_ssp5'
+run_name = 'CMCC_ssp5'
 
 delta = mod42_netw(settings_td_v1.constants, settings_td_v1.geo_pars, settings_td_v1.forc_pars, settings_td_v1.phys_pars)#, pars_seadom = (25000,100,10), pars_rivdom = (200000,2000,0))
 
