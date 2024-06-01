@@ -12,8 +12,13 @@ def forc_RMDJ():
     os.chdir('../../../../Downscaling_SI/predictions')
     #os.chdir('../../../../Downscaling_Salt_Intrusion/predictions')
     
-    xl_Tiel = pd.read_excel('ensemble_average_Tiel_SSP5-8.5.xlsx')
-    xl_Megen = pd.read_excel('ensemble_average_Megen_SSP5-8.5.xlsx')
+    ssp = 'SSP5-8.5'
+    member = 'NorESM'
+    
+    # xl_Tiel = pd.read_excel('ensemble_average_Tiel_SSP5-8.5.xlsx')
+    # xl_Megen = pd.read_excel('ensemble_average_Megen_SSP5-8.5.xlsx')
+    xl_Tiel = pd.read_excel('Tiel/' + member + "_" + ssp + '.xlsx')
+    xl_Megen = pd.read_excel('Megen/' + member + "_" + ssp + '.xlsx')
     
     #time parameters
     T = 365*84
