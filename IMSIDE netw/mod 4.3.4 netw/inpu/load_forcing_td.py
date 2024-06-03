@@ -12,7 +12,7 @@ def forc_RMDJ():
     os.chdir('../../../../Downscaling_SI/predictions')
     #os.chdir('../../../../Downscaling_Salt_Intrusion/predictions')
     
-    ssp = 'SSP5-8.5'
+    ssp = 'SSP2-4.5'
     member = 'MRI'
     
     # xl_Tiel = pd.read_excel('ensemble_average_Tiel_SSP5-8.5.xlsx')
