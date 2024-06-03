@@ -13,7 +13,7 @@ def forc_RMDJ():
     #os.chdir('../../../../Downscaling_Salt_Intrusion/predictions')
     
     ssp = 'SSP2-4.5'
-    member = 'CESM'
+    member = 'EC-Earth'
     
     # xl_Tiel = pd.read_excel('ensemble_average_Tiel_SSP5-8.5.xlsx')
     # xl_Megen = pd.read_excel('ensemble_average_Megen_SSP5-8.5.xlsx')
