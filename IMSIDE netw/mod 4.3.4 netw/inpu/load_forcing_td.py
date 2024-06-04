@@ -15,10 +15,10 @@ def forc_RMDJ():
     ssp = 'SSP2-4.5'
     member = 'CMCC'
     
-    # xl_Tiel = pd.read_excel('ensemble_average_Tiel_SSP5-8.5.xlsx')
-    # xl_Megen = pd.read_excel('ensemble_average_Megen_SSP5-8.5.xlsx')
-    xl_Tiel = pd.read_excel('Tiel/' + ssp + '/' + member + "_" + ssp + '.xlsx')
-    xl_Megen = pd.read_excel('Megen/' + ssp + '/' + member + "_" + ssp + '.xlsx')
+    xl_Tiel = pd.read_excel('ensemble_average_Tiel_'+ssp+'.xlsx')
+    xl_Megen = pd.read_excel('ensemble_average_Megen_'+ssp+'.xlsx')
+    # xl_Tiel = pd.read_excel('Tiel/' + ssp + '/' + member + "_" + ssp + '.xlsx')
+    # xl_Megen = pd.read_excel('Megen/' + ssp + '/' + member + "_" + ssp + '.xlsx')
     
     #time parameters
     T = 365*84
