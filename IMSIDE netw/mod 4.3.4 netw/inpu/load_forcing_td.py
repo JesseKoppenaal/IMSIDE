@@ -13,21 +13,21 @@ def forc_RMDJ():
     #os.chdir('../../../../Downscaling_Salt_Intrusion/predictions')
     
     ssp = 'SSP2-4.5'
-    member = 'CMCC'
+    member = 'NorESM'
     
-    xl_Tiel = pd.read_excel('ensemble_average_Tiel_'+ssp+'.xlsx')
-    xl_Megen = pd.read_excel('ensemble_average_Megen_'+ssp+'.xlsx')
-    # xl_Tiel = pd.read_excel('Tiel/' + ssp + '/' + member + "_" + ssp + '.xlsx')
-    # xl_Megen = pd.read_excel('Megen/' + ssp + '/' + member + "_" + ssp + '.xlsx')
+    # xl_Tiel = pd.read_excel('ensemble_average_Tiel_'+ssp+'.xlsx')
+    # xl_Megen = pd.read_excel('ensemble_average_Megen_'+ssp+'.xlsx')
+    xl_Tiel = pd.read_excel('Tiel/' + ssp + '/' + member + "_" + ssp + '.xlsx')
+    xl_Megen = pd.read_excel('Megen/' + ssp + '/' + member + "_" + ssp + '.xlsx')
     
     #time parameters
     T = 365*84
     DT = np.zeros(T) + 24*3600 # I usually work with subtidal time steps of one day 
     
-    Q_Tiel = xl_Tiel['ensemble_avg'][:T]
-    Q_Megen = xl_Megen['ensemble_avg'][:T]
-    # Q_Tiel = xl_Tiel['Q'][:T]
-    # Q_Megen = xl_Megen['Q'][:T]
+    # Q_Tiel = xl_Tiel['ensemble_avg'][:T]
+    # Q_Megen = xl_Megen['ensemble_avg'][:T]
+    Q_Tiel = xl_Tiel['Q'][:T]
+    Q_Megen = xl_Megen['Q'][:T]
     
     
     #forcing conditions
